@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    {% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+    
+    {% block branding %}
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('polls administration') }}</a></h1>
+    {% endblock %}
+    
+    {% block nav-global %}{% endblock %}
+  </body>
+</html>
